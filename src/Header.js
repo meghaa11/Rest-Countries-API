@@ -1,4 +1,5 @@
 import React from 'react'
+import DarkMode from './DarkMode'
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
                 <h1>Where in the world?</h1>
             </div>
             <div>
-                <i className="fas fa-moon"></i>Dark Mode
+            <DarkMode />
             </div>
         </section>
     </div>

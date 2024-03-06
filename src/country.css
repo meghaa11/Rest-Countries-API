@@ -1,0 +1,17 @@
+.country{
+    padding: 40px;
+
+}
+
+.btn-light{
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.country article {
+    margin: 30px 0;
+}
+
+.country article .country-details{
+    margin: 10px 0;
+}

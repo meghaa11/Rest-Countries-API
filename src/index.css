@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
 :root {
-  --dark-bg-color: hsl(207, 26%, 17%);
-  --article-color: hsl(209, 23%, 22%);
-  --text-color: hsl(0, 0%, 100%);
-  --light-mode-text: hsl(200, 15%, 8%);
-  --light-mode-input: hsl(0, 0%, 52%);
-  --light-mode-background: hsl(0, 0%, 98%);
+
+  --body-background: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+  --text-input: hsl(0, 0%, 52%);
+}
+
+[data-theme='dark' ]{
+  --body-background: hsl(207, 26%, 17%);
+  --text-color: white;
+  --text-input: hsl(0, 0%, 100%);
 }
 
 * {
@@ -22,9 +26,8 @@ img {
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  background-color: hsl(207, 26%, 17%);
-  color: white;
-
+  background-color: var(--body-background);
+  color: var(--text-color);
 }
 
 /* Header */
@@ -33,13 +36,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2b3743;
+  background-color: var(--body-background);
+  color: var(--text-color);
   padding: 10px 20px;
 }
 
 /* Filter */
 
 .filter{
+  background-color: var(--body-background);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   padding: 20px 20px;
@@ -47,30 +53,30 @@ body {
   justify-content: space-between;
 }
 
-.filter .form-control{
+.filter .search-country .form-control{
+  background-color: var(--body-background);
+  color: var(--text-color);
   width: 100%;
 }
 
 .filter .form-control input{
-  background-color: #2b3743;
+  background-color: var(--body-background);
+  color: var(--text-color);
   border: none;
   outline: none;
   padding: 8px;
   border-radius: 5px;
-  color: white;
   font-family: inherit;
   letter-spacing: 0.5px;
-  width: 100px;
+  width: 250%;
   margin: 0;
 }
-.filter .form-control input::placeholder{
-  color: white;
-}
+
 
 
 .filter .region-filter .select{
-  background-color: #2b3743;
-  color: white;
+  background-color: var(--body-background);
+  color: var(--text-color);
   font-family: inherit;
   padding: 8px;
   border: none;
@@ -89,6 +95,7 @@ body {
 .grid article{
   box-shadow: 0 10px 10px rgba(9, 17, 22, 0.5);
 }
+
 
 @media (min-width: 650px) {
   .grid{
@@ -117,6 +124,9 @@ body {
   .header, .filter, .grid{
     padding: 20px;
   }
+  .filter .search-country .form-control {
+    width: 70%;
+  }
   
   .grid{
     grid-template-columns: repeat(4, 1fr);
@@ -125,9 +135,16 @@ body {
 }
 
 .country{
+  margin: 0;
   padding: 10px;
-  background-color: hsl(209, 23%, 22%);
+  align-items: center;
+  background-color: var(--body-background);
+  color: var(--text-color);
   border-radius: 0 0 5px 5px;
+}
+
+.country-data{
+  align-items: center;
 }
 
 .grid article h3{
@@ -152,18 +169,24 @@ body {
   padding: 20px;
 }
 
+.search-country{
+  background-color: var(--body-background);
+  color: var(--text-color);
+}
+
 .btn {
-  background-color: var(--dark-bg-color);
+  background-color: var(--body-background);
+  color: var(--text-color);
   padding: 5px;
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
   border: 2px solid var(--dark-bg-color);
   border-radius: 4px;
   transition: background-color 0.2s;
+  margin: 10px 0;
 }
 
 .btn:hover{
-  background-color: white;
-  color: var(--dark-bg-color);
+  background-color: var(--body-background);
+  color: var(--text-color);
 }
